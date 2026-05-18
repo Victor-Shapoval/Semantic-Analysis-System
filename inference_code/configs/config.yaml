@@ -1,0 +1,30 @@
+interface: ap1 # network interface for SV capture
+app_id: 0x4000 # SV stream APPID (IEC 61850-9-2LE)
+
+sv:
+  src_mac: "" # SV publisher IED MAC, example: "00:0c:cd:01:02:03"; leave empty to listen to all IEDs
+  dst_mac: "01:0c:cd:04:00:01" # SV stream MAC address, example: "01:0c:cd:04:00:01"; leave empty to listen to all SV streams
+  sps: 4000 # SV stream sampling rate, samples/s (IEC 61850-9-2LE: 4000 for 50 Hz, 4800 for 60 Hz)
+  frequency: 50 # nominal power-system frequency, Hz (50 or 60)
+
+goose:
+  interface: ap1 # network interface for sending GOOSE
+  app_id: 0x0001 # GOOSE stream APPID (IEC 61850-8-1)
+  go_id: "SEMAgent_GOOSE" # GOOSE stream GOID
+  go_cb_ref: "SEMAgent/LLN0$GO$gcb01" # GOOSE stream GO CB ref
+  dst_mac: "01:0c:cd:01:00:01" # GOOSE stream MAC address
+  invert_trip: false # invert BOOLEAN Trip for receiver-side inversion compensation
+
+scaler:
+  u_nom: 132790 # nominal phase voltage, V
+  i_nom: 177 # nominal line current, A
+
+model:
+  path: "models/model_gru.onnx"
+  threshold: 0.5 # classification threshold P(Anomaly): [0, 1]
+  debounce: 1 # consecutive windows required to confirm a trip-state change
+
+log:
+  path: "process.log" # all logs are written to a file; nothing is printed to the console
+  level: "INFO" # file log filtering level: INFO, WARN, ERROR
+  display_mode: "rms" # live console display: "peak" (peak values), "rms" (RMS values), empty = disabled
