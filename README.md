@@ -6,7 +6,7 @@ Industrial cybersecurity often focuses on network monitoring: which devices comm
 
 This project explores a semantic traffic analysis system for an IEC 61850 process bus in digital substations.
 
-![Digital Substation Architecture](./suply_files/digital_substation_arch.png)
+![Digital Substation Architecture](./supply_files/digital_substation_arch.png)
 
 ### Data
 
@@ -26,7 +26,7 @@ The dataset is generated from synthetic experiments in MATLAB Simulink. The proj
 
 Both bolted and arc-fault scenarios are included. Data is generated at every kilometer for each fault type and fault mode.
 
-![Data Generating](./suply_files/math_model.png)
+![Data Generating](./supply_files/math_model.png)
 
 ### Dataset
 
@@ -100,7 +100,7 @@ The deployment component is written in Go and follows DDD-oriented project bound
 
 The modules are connected by an application-level pipeline orchestrator.
 
-![System Architecture](suply_files/system_arch.png)
+![System Architecture](./supply_files/system_arch.png)
 
 ### Configuration
 
