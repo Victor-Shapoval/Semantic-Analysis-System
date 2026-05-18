@@ -6,7 +6,7 @@ Industrial cybersecurity often focuses on network monitoring: which devices comm
 
 This project explores a semantic traffic analysis system for an IEC 61850 process bus in digital substations.
 
-![Digital Substation Architecture](suply_files/digital_substation_arch.drawio.png)
+![Digital Substation Architecture](./suply_files/digital_substation_arch.png)
 
 ### Data
 
@@ -26,7 +26,7 @@ The dataset is generated from synthetic experiments in MATLAB Simulink. The proj
 
 Both bolted and arc-fault scenarios are included. Data is generated at every kilometer for each fault type and fault mode.
 
-![Data Generating](suply_files/math_model.drawio.png)
+![Data Generating](./suply_files/math_model.png)
 
 ### Dataset
 
@@ -59,7 +59,7 @@ Three neural-network architectures are used: LSTM, GRU, and CNN + BiLSTM.
 
 The model metrics are high, mainly because the line physical parameters are identical across the generated training data. Metrics are expected to be lower on a separate test line.
 
-![Training History](<suply_files/training history.png>)
+![Training History](./suply_files/training history.png>)
 
 The full training workflow is implemented in [4_train_models](./training_code/4_train_models.ipynb).
 
@@ -69,7 +69,7 @@ For evaluation, a new line model was created in [MATLAB Simulink](./MATLAB_scrip
 The new line has different parameters, and all scenarios were saved as COMTRADE files.
 Evaluation is performed in a test environment with a real protection relay and PTPv2 synchronization.
 
-![Test Env](suply_files/test_env.drawio.png)
+![Test Env](./suply_files/test_env.png)
 
 |||
 |---|---|
@@ -100,7 +100,7 @@ The deployment component is written in Go and follows DDD-oriented project bound
 
 The modules are connected by an application-level pipeline orchestrator.
 
-![System Architecture](suply_files/system_arch.drawio.png)
+![System Architecture](suply_files/system_arch.png)
 
 ### Configuration
 
