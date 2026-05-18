@@ -247,3 +247,12 @@ semantic_analysis_system/
 - Recalculate statistics every 24 hours or another configured period.
 - Update the scaler automatically.
 - Optionally notify the dispatcher if drift exceeds a threshold, for example 20%.
+
+## Limitations and Safety Notes
+
+This project is intended for research and engineering evaluation purposes.
+
+The system is not designed to be used as a standalone decision-making component for protection or operational control in production critical infrastructure environments without additional validation, redundancy, and safety assessment procedures.
+
+ML-based anomaly detection in industrial environments may produce false positives or require environment-specific retraining and calibration.
+
