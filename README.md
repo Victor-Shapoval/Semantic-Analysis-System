@@ -69,7 +69,7 @@ For evaluation, a new line model was created in [MATLAB Simulink](./MATLAB_scrip
 The new line has different parameters, and all scenarios were saved as COMTRADE files.
 Evaluation is performed in a test environment with a real protection relay and PTPv2 synchronization.
 
-![Test Env](./suply_files/test_env.png)
+![Test Env](./supply_files/test_env.png)
 
 |||
 |---|---|
